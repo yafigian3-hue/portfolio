@@ -1,3 +1,16 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+#mobileMenu {
+  transform: translateX(110%) !important;
+}
+
+[data-aos] {
+  overflow-x: hidden !important;
+}
+
 /* Typing Effect */
 .typing-cursor::after {
   content: "";
