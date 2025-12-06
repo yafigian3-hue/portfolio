@@ -26,6 +26,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/animations.css">
+
+  <style>
+  * {
+    outline: 1px solid red;
+  }
+</style>
 </head>
 
 <body class="overflow-x-hidden bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
@@ -116,7 +122,7 @@
 
     <!-- MOBILE MENU -->
     <div id="mobileMenu"
-      class="fixed right-0 top-0 h-full w-40 bg-white dark:bg-gray-800 p-6 shadow-xl 
+      class="fixed right-0 top-0 h-full w-56 bg-white dark:bg-gray-800 p-6 shadow-xl 
       transform translate-x-full transition-transform duration-300 md:hidden z-50">
 
     <div class="flex items-center justify-between mb-8">
@@ -336,7 +342,8 @@
       data-aos="zoom-in">
       Sedang Dipelajari</h3>
 
-    <div id="learnGrid" class="flex justify-center items-center gap-[10rem]">
+    <div id="learnGrid" class="flex justify-center items-center gap-10 md:gap-[10rem]">
+
 
       <!-- PHP -->
       <div class="flex flex-col items-center opacity-0" data-aos="zoom-in">
