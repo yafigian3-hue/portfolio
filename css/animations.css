@@ -5,7 +5,14 @@ html, body {
 
 [data-aos] {
   overflow-x: hidden !important;
+  overflow: hidden !important;
 }
+
+/* Kunci scroll body saat menu aktif */
+.body-no-scroll {
+  overflow: hidden;
+}
+
 
 /* Typing Effect */
 .typing-cursor::after {
