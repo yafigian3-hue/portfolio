@@ -40,17 +40,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = document.getElementById("mobileMenu");
   const closeMenu = document.getElementById("closeMenu");
   const overlay = document.getElementById("menuOverlay");
+  const activeOpacityClass = "opacity-50"
+
+  if (!menuBtn) console.error("menuBtn TIDAK ditemukan di HTML");
+  if (!mobileMenu) console.error("mobileMenu TIDAK ditemukan di HTML");
+  if (!closeMenu) console.error("closeMenu TIDAK ditemukan di HTML");
+  if (!overlay) console.error("menuOverlay TIDAK ditemukan di HTML");
+
 
   function openMenu() {
     mobileMenu.classList.remove("translate-x-full");
     overlay.classList.remove("hidden");
+    document.body.classList.add('body-no-scroll');
     requestAnimationFrame(() => overlay.classList.remove("opacity-0"));
+    overlay.classList.add(activeOpacityClass);
   }
 
   function hideMenu() {
     mobileMenu.classList.add("translate-x-full");
+    overlay.classList.remove(activeOpacityClass);
     overlay.classList.add("opacity-0");
     setTimeout(() => overlay.classList.add("hidden"), 300);
+    document.body.classList.remove('body-no-scroll');
+
   }
 
   menuBtn?.addEventListener("click", openMenu);
@@ -136,4 +148,3 @@ document.addEventListener("DOMContentLoaded", () => {
     obs2.observe(whyTitle);
   }
 });
-
