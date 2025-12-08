@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  
   //DARK MODE
   const html = document.documentElement;
 
@@ -35,23 +34,22 @@ document.addEventListener("DOMContentLoaded", () => {
     applyTheme(!html.classList.contains("dark"))
   );
 
- //MOBILE MENU
+  //MOBILE MENU
   const menuBtn = document.getElementById("menuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
   const closeMenu = document.getElementById("closeMenu");
   const overlay = document.getElementById("menuOverlay");
-  const activeOpacityClass = "opacity-50"
+  const activeOpacityClass = "opacity-50";
 
   if (!menuBtn) console.error("menuBtn TIDAK ditemukan di HTML");
   if (!mobileMenu) console.error("mobileMenu TIDAK ditemukan di HTML");
   if (!closeMenu) console.error("closeMenu TIDAK ditemukan di HTML");
   if (!overlay) console.error("menuOverlay TIDAK ditemukan di HTML");
 
-
   function openMenu() {
     mobileMenu.classList.remove("translate-x-full");
     overlay.classList.remove("hidden");
-    document.body.classList.add('body-no-scroll');
+    document.body.classList.add("body-no-scroll");
     requestAnimationFrame(() => overlay.classList.remove("opacity-0"));
     overlay.classList.add(activeOpacityClass);
   }
@@ -61,8 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.classList.remove(activeOpacityClass);
     overlay.classList.add("opacity-0");
     setTimeout(() => overlay.classList.add("hidden"), 300);
-    document.body.classList.remove('body-no-scroll');
-
+    document.body.classList.remove("body-no-scroll");
   }
 
   menuBtn?.addEventListener("click", openMenu);
@@ -73,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", hideMenu);
   });
 
-    //GLOBAL TYPING FUNCTION
+  //GLOBAL TYPING FUNCTION
   function typeWriter(element, text, speed, callback = null) {
     let i = 0;
     function type() {
@@ -88,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     type();
   }
 
-    //TYPING HERO
+  //TYPING HERO
   const typingHero = document.getElementById("typingHero");
   if (typingHero) {
     setTimeout(() => {
@@ -100,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500);
   }
 
-    //TYPING ABOUT (SCROLL)
+  //TYPING ABOUT (SCROLL)
   const typingAbout = document.getElementById("typingAbout");
   if (typingAbout) {
     const aboutText =
@@ -119,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     obs1.observe(typingAbout);
   }
 
-    // TYPING ABOUT 2 (SCROLL)
+  // TYPING ABOUT 2 (SCROLL)
   const typingAbout2 = document.getElementById("typingAbout2");
   const whyTitle = document.getElementById("whyTitle");
 
