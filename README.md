@@ -20,5 +20,4 @@ Explore my work and learn more about my journey here:
 
 * HTML5
 * Tailwind
-* 
 * Vanilla JavaScript (ES6+)
