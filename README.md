@@ -16,7 +16,7 @@ Explore my work and learn more about my journey here:
 * **Performance Focused:** Clean code structure ensures fast loading times.
 * **Dynamic Project Display:** Easily updated structure to add new projects.
 
-* ## 🛠️ Built With
+## 🛠️ Built With
 
 * HTML5
 * Tailwind
