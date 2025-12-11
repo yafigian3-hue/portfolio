@@ -46,10 +46,32 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!closeMenu) console.error("closeMenu TIDAK ditemukan di HTML");
   if (!overlay) console.error("menuOverlay TIDAK ditemukan di HTML");
 
+  function lockScroll() {
+    const scrollY = window.scrollY;
+    document.body.dataset.scrollLock = scrollY;
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+  }
+
+  function unlockScroll() {
+    const scrollY = document.body.dataset.scrollLock || 0;
+
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+
+    window.scrollTo(0, parseInt(scrollY));
+  }
+
   function openMenu() {
+    lockScroll(); // Kunci posisi layar
+    document.body.classList.add("body-no-scroll");
+
     mobileMenu.classList.remove("translate-x-full");
     overlay.classList.remove("hidden");
-    document.body.classList.add("body-no-scroll");
+
     requestAnimationFrame(() => overlay.classList.remove("opacity-0"));
     overlay.classList.add(activeOpacityClass);
   }
@@ -58,7 +80,10 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenu.classList.add("translate-x-full");
     overlay.classList.remove(activeOpacityClass);
     overlay.classList.add("opacity-0");
+
     setTimeout(() => overlay.classList.add("hidden"), 300);
+
+    unlockScroll(); // Kembalikan posisi scroll
     document.body.classList.remove("body-no-scroll");
   }
 
