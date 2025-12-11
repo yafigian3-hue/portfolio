@@ -10,11 +10,9 @@ body {
 }
 
 /* Kunci scroll body saat menu aktif */
-  .body-no-scroll {
-    overflow: hidden;
-    height: 100vh;
-  }
-
+.body-no-scroll {
+  overflow: hidden;
+}
 
 /* Typing Effect */
 .typing-cursor::after {
